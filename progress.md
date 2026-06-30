@@ -5,7 +5,7 @@
 ### Core Java
 
 - [x] Java Basics
-- [ ] OOP
+- [x] OOP
 - [ ] Collections
 - [ ] Exception Handling
 - [ ] File Handling
