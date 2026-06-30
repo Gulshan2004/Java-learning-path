@@ -1,4 +1,4 @@
-class Typeconversion{
+class TypeConversion{
     public static void main(String args[]){
         //byte b= 127;
         /*int c = 257;

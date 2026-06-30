@@ -6,7 +6,7 @@ class calculator{
         return r;
     }
 }
-public class objectDemo {
+public class ObjectDemo {
     public static void main(String args[]){
         int num1 =4;
         int num2=5;
