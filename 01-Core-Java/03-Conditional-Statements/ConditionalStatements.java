@@ -1,4 +1,4 @@
-public class Conditional_Statements{
+/*public class ConditionalStatements{
     public static void main(String args[]) {
         /*
          * int x = 18;
@@ -10,7 +10,7 @@ public class Conditional_Statements{
          * else
          * System.out.println("bye");
          * }
-         */
+         
 
         int x = 8;
         int y = 7;
@@ -24,4 +24,4 @@ public class Conditional_Statements{
             System.out.println(z);
         }
     }
-}
+}*/
