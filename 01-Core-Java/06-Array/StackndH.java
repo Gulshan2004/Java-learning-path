@@ -9,10 +9,10 @@ class Calculator {
 
 public class StackndH {
     public static void main(String args[]) {
-        int data = 10;
+        // int data = 10;
         Calculator obj = new Calculator();
         Calculator obj1 = new Calculator();
-        int r1 = obj.add(2, 4);
+        //int r1 = obj.add(2, 4);
         // System.out.println(r1);
 
         obj.num =8;
