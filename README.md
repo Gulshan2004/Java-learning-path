@@ -22,7 +22,7 @@ This repository documents my progress as I prepare for Software Development Engi
 
 ## 📚 Learning Roadmap
 
-### ✅ Phase 1: Core Java
+### ✅ Phase 1: Learning JAVA
 - [X] Java Basics
 - [ ] OOP
 - [ ] Collections Framework
