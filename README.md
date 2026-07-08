@@ -37,4 +37,3 @@ This repository documents my progress as I prepare for Software Development Engi
 
 - [ ] Spring Framework
 - [ ] Spring Boot
-- [ ]
