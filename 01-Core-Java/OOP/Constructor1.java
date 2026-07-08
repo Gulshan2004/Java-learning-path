@@ -2,6 +2,7 @@ class Human{
     private int age;
     private String name; 
     //Constructor  is a Special Method with the same name as the class name and do not have a return type.
+    
     public Human(){ // Default  Constructor
         age = 12;
         name = "John";
