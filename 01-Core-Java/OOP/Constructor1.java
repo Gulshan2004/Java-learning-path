@@ -22,7 +22,7 @@ class Human{
 public class Constructor1{
     public static void main(String args[]){
         Human obj =new Human();
-       // Human obj1 =new Human(); // Every time we create an object we call the constructor 
+        // Every time we create an object we call the constructor 
         System.out.println(obj.getName() + ":" + obj.getAge());
         //obj.setAge(34);
         //obj.setName("Gulshan");
