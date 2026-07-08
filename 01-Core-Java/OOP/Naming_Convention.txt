@@ -1,0 +1,7 @@
+for class and interface name always start with Captal letter - Calc, Runable
+
+for Variables and Mehtods always start them with small letters Example : marks , show()
+
+constants - All Capital Example PIE
+
+when we are combining words use format like showMymarks()
