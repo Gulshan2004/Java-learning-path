@@ -24,7 +24,7 @@ This repository documents my progress as I prepare for Software Development Engi
 
 ### ✅ Phase 1: Learning JAVA
 - [X] Java Basics
-- [ ] OOP
+- [X] OOP
 - [ ] Collections Framework
 - [ ] Exception Handling
 - [ ] File Handling
