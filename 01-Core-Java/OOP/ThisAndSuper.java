@@ -25,7 +25,7 @@ public class ThisAndSuper {
      //B obj = new B(5); // This Will Print the Non-Paramaterized constructor of Base class and then Parameterized constructor of Derived Class.
 
     
-     B obj = new B(); //it Will Give the Non Parametrized constructor of Base class and then Dervived class  
+    // B obj = new B(); //it Will Give the Non Parametrized constructor of Base class and then Dervived class  
 
     }
 }
