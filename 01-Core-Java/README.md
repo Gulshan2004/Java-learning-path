@@ -10,4 +10,3 @@ This folder contains all my Core Java practice programs.
 - Exception Handling
 - File Handling
 - Multithreading
-- JDBC
