@@ -14,4 +14,4 @@ public class WrapperClass {
     }
 }
 
-//for Every Primitive type in java we have a class for it .
+//for Every Primitive type in java we have a class for it and this class is referred as Wrapper class.
