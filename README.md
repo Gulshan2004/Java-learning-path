@@ -17,7 +17,7 @@ This repository documents my progress as I prepare for Software Development Engi
 - Strengthen SQL & JDBC
 - Develop industry-level projects
 - Prepare for Coding Interviews and Placements
-
+  
 ---
 
 ## 📚 Learning Roadmap
