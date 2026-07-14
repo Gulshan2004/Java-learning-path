@@ -1,6 +1,6 @@
 //When ever we want to get the value of a variable we use the getVariable_name method  this is called getter
 //when ever we want to set the value of a variable we use the setVariable_name method this is called setter
-class Human{
+class Human1{
     private int age; //default 0
     private String name; // default Null
 
