@@ -1,4 +1,4 @@
-class Human{
+class Human5{
     private int age; 
     private String name; 
 
@@ -18,7 +18,7 @@ class Human{
 }
 public class This {
      public static void main(String args[]){
-        Human obj =new Human();
+        Human5 obj =new Human5();
         obj.setAge(34);
         obj.setName("Gulshan");
         //obj.age =11;
