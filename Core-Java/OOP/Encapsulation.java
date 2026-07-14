@@ -1,4 +1,4 @@
-class Human{
+class Human2{
     private int age; //default 0
     private String name; // default Null
 
@@ -17,7 +17,7 @@ class Human{
 }
 public class Encapsulation {
     public static void main(String args[]){
-        Human obj =new Human();
+        Human2 obj =new Human2();
         obj.setAge(34);
         obj.setName("Gulshan");
         //obj.age =11;
