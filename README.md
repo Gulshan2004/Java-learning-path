@@ -1,5 +1,5 @@
 # Java-learning-path
-My Java Backend Development journey covering Core Java, DSA, SQL, JDBC, Spring Boot, projects, and interview preparation.
+My Java Backend Development journey covering Core Java, SQL, JDBC, Spring Boot, projects, and interview preparation.
 
 # ☕ Java Learning Path
 
@@ -17,18 +17,16 @@ This repository documents my progress as I prepare for Software Development Engi
 - Strengthen SQL & JDBC
 - Develop industry-level projects
 - Prepare for Coding Interviews and Placements
-
+  
 ---
 
 ## 📚 Learning Roadmap
 
 ### ✅ Phase 1: Learning JAVA
-- [X] Java Basics
+- [X] Core Java
 - [X] OOP
-- [ ] Collections Framework
-- [ ] Exception Handling
-- [ ] File Handling
-- [ ] Multithreading
+- [ ] Advanced java
+- [ ] Maven
 - [ ] JDBC
 
 ---
