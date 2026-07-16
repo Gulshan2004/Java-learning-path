@@ -25,7 +25,7 @@ This repository documents my progress as I prepare for Software Development Engi
 ### ✅ Phase 1: Learning JAVA
 - [X] Core Java
 - [X] OOP
-- [ ] Advanced java
+- [X] Advanced java
 - [ ] Maven
 - [ ] JDBC
 
