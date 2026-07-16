@@ -4,7 +4,7 @@ class A1 {
     }
 }
 
-public class AnonymousInnerClass {
+public class AnonymousInnerClass{
     public static void main(String args[]) {
         A1 obj = new A1() {
             public void show() {
