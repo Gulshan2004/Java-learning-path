@@ -1,31 +1,31 @@
-class  A extends Object{
-    public A(){
+class  A7 extends Object{
+    public A7(){
         super();
-        System.out.println("In A");
+        System.out.println("In A7");
     }
-    public A(int n){
+    public A7(int n){
         super();
-        System.out.println("In A int");
+        System.out.println("In A7 int");
     }
 }
 
-class B extends A{ 
-    public B(){
+class B7 extends A7{ 
+    public B7(){
         super(5);
-        System.out.println("In B");
+        System.out.println("In B7");
     }
-    public B(int n){
+    public B7(int n){
         super(n); //To Get the Value of Parameterized constructor of the base class we need to pass the parameter in super method of the derived class parameterized constructor.
         //Provided paratmeter is passed with the object in the main method line 25.
-        System.out.println("In B int");
+        System.out.println("In B7 int");
     }
 }
 public class ThisAndSuper {
     public static void main(String args[]){
-     //B obj = new B(5); // This Will Print the Non-Paramaterized constructor of Base class and then Parameterized constructor of Derived Class.
+     //B7 obj = new B7(5); // This Will Print the Non-Paramaterized constructor of Base class and then Parameterized constructor of Derived Class.
 
     
-    // B obj = new B(); //it Will Give the Non Parametrized constructor of Base class and then Dervived class  
+    // B7 obj = new B7(); //it Will Give the Non Parametrized constructor of Base class and then Dervived class  
 
     }
 }
@@ -44,21 +44,21 @@ public class ThisAndSuper {
 
 //this() Mehtod is used to execute the constructor of the sane class .
 //NOTE: If we want to execute both the constructor of the derived class we use the this() method example is as follows:
-// class B extends A{ 
-//     public B(){
+// class B7 extends A7{ 
+//     public B7(){
 //         super(5);
-//         System.out.println("In B");
+//         System.out.println("In B7");
 //     }
-//     public B(int n){
+//     public B7(int n){
 //         this(); 
-//         System.out.println("In B int");
+//         System.out.println("In B7 int");
 //     }
 // }
 
 // NOTE: this() method will execute the default constructor of the same  class and 
 // the default construcotr will execute the default constructor of base class and the final output will be:
 /*  OUTPUT:-
-In A
-In B
-In B int
+In A7
+In B7
+In B7 int
 */
