@@ -13,8 +13,10 @@ public class Enum {
         
         Status s = Status.Running; // assigning variable to each object 
         Status f = Status.Failed;
+        Status P = Status.Pending;
         System.out.println(s);
         System.out.println(f);
+        System.out.println(P);
 
         System.out.println(s.ordinal());
 
