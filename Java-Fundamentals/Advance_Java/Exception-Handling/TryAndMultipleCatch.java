@@ -3,10 +3,10 @@ public class TryAndMultipleCatch {
         int i = 2;
         int j = 0;
         int nums[] = new int[5];
-        String str = null;
+        //String str = null;
         try {
             j = 18 / i;
-            System.out.println(str.length());
+           // System.out.println(str.length());
             System.out.println(nums[1]);
             System.out.println(nums[5]);// this will throw an out of bound exception
         }
@@ -18,7 +18,7 @@ public class TryAndMultipleCatch {
             System.out.println("Stay in you limit");
         }
         catch(java.lang.Exception e){
-            System.out.println("Something went wrong"+ e);//null pointer exception cuz str is null 
+            System.out.println("Something went wrong"+ e);//null pointer exception cuz str is null , NOTE:- ive commented the lines 6 & 9
         }
         System.out.println(j);
         System.out.println("sorry");
