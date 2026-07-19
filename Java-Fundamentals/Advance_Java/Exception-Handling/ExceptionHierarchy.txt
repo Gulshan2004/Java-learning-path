@@ -1,0 +1,18 @@
+                        Object
+                          |
+                        Throwable 
+            --------------|-----------------
+            |                              |
+        Error(cannot be handled)       Exception(Can be handled)
+            |                              |
+    -------------------            -----------------------------------------------------------------------------------------
+    |        |        |            |                                                     |                                 |
+ThreadDeath  |  IO Error        RunitmeException(UNCHECKED EXCEPTION)          SQLException (CHECKED EXCEPTION)       IOException(CHECKED EXCEPTION)
+             |                   {ArraIndex}  
+    Virtual Machine error       {Arithemetic}
+             |                  {NullPointer}
+        OutOfMemory
+
+
+UNCHECKED EXCEPTION:- Exceptions which are not necessary to be handled
+CHECKED EXCEPTION :- Exceptions which are necessary to be handled cuz they cause unexpected outcomes later
