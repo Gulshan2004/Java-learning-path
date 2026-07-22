@@ -3,7 +3,7 @@
 //import java.io.BufferedReader;
 import java.io.IOException;
 //import java.io.InputStreamReader;
-import java.util.Scanner;
+///import java.util.Scanner;
 
 public class User_Input{
     public static void main(String args[]) throws IOException{ //throws is just used for understanidng the concept it is not suitable to use it with the main method
@@ -18,9 +18,9 @@ public class User_Input{
 
 
     //Instead of Buffer reader we can use Scanner
-       Scanner sc = new Scanner(System.in); //System .in is used for the source from whre the input is taken
-       int num = sc.nextInt();
-       System.out.println(num); 
+    //    Scanner sc = new Scanner(System.in); //System .in is used for the source from whre the input is taken
+    //    int num = sc.nextInt();
+    //    System.out.println(num); 
     }
 }
 /*println is a method of PrintSream and out is a object of PrintStream
