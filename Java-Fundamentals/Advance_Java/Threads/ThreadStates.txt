@@ -1,0 +1,20 @@
+Every time we create a new thread it goes into the NEW state 
+                          NEW
+                           |  
+                           | start()
+            stop()         |
+      DEAD<---<<<<<----- RUNNABLE [When a thread is executing and waiting for the scheduler ]
+                            |
+                            |
+                            |                    RUNNABLE
+                ---<<<<------                      ^
+                |                                  | notify()
+          run() |                                  | [If wait() is used then to free it from waiting state use notify() method]
+                |                                  | 
+             RUNNING---------->>>>>>>----------->WAITING
+                |            wait() , sleep()
+         stop() |
+                |
+                -->>>-- DEAD 
+
+                
