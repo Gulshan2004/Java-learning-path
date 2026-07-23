@@ -25,7 +25,7 @@ public class RaceConditions {
         t1.start();
         t2.start();
 
-        t1.join(); //join() is a special method which allows your main method to come back and join 
+        t1.join(); //join() is a special method which allows your main method to come back after waiting and join and it throws a checked exception so it need to be handeld thats why we used the throws keyword in the main signature.
         t2.join();
 
         System.out.println(c.count);
