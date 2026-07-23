@@ -1,3 +1,14 @@
 collection API is  a concept 
 collection is an interface
 collections is Class
+
+The collection interface belong to a java.util interface so we need to import
+it
+ByDefault the Collection interfac works with objects
+
+
+various Interface like list , Queue , Set Extends the Collection interface
+all these interfaces individually have their own class representations
+Example for list we have -ArrayList and Linked List etc.
+For Set we have - HashSet and Linked Hashset etc.
+For Queue we have - DeQueue etc.
