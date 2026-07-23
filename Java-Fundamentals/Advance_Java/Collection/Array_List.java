@@ -2,7 +2,7 @@ import java.util.ArrayList;
 //import java.util.Collection;
 import java.util.List;
 
-public class CollectionInterface {
+public class Array_List {
     public static void main(String args[]) {
         List<Integer> nums = new ArrayList<Integer>();
         nums.add(6);//These are not Integers these are objectsthere for to work with integers DataType We use 
