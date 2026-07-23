@@ -1,0 +1,3 @@
+collection API is  a concept 
+collection is an interface
+collections is Class
