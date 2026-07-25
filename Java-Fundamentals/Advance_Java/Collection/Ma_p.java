@@ -1,4 +1,6 @@
-// import java.util.Collection;
+package Collection;
+
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
