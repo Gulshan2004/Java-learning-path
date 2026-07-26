@@ -5,8 +5,8 @@ import java.util.List;
 class Student{
     private String name;
     private int age;
-    public Student(){
-
+    public Student(){ // Default constructor
+         
     }
 
     public Student(String name) {
@@ -42,11 +42,23 @@ public class ConstructorReference {
 
         List<String> names = Arrays.asList("Gulshan", "Navin", "Harsh");
 
-        //Now I want to create one object for each name
-        List<Student> students =new ArrayList<>();
+        //Now I want to create one student object for each name
+        List<Student> students =new ArrayList<>(); // this is a list of students which is empty at the moment
 
-        for(String name:names){
-            new Student(name);
-        }
+        //Every time the loop runs we create a new student object 
+        // for(String name:names){
+        //     students.add(new Student(name));
+        // }
+
+        //NOW DOING THE SAME THING USING Stream Api
+        students = names.stream() // so the stream will have three names
+                        .map(Student::new) //the map will take one name and create a new student object
+                        .toList(); //converting stream to list
+
+        System.out.println(students);
     }
 }
+/*
+Constructor Refrence:-
+instead of doing  map(name->new  Student(name))  we can do Student::new this will create a new student object 
+*/
