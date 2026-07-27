@@ -5,11 +5,11 @@
 ### Core Java
 
 - [x] Java Basics
-- [ ] OOP
-- [ ] Collections
-- [ ] Exception Handling
-- [ ] File Handling
-- [ ] Multithreading
+- [x] OOP
+- [x] Collections
+- [x] Exception Handling
+- [x] File Handling
+- [x] Multithreading
 - [ ] JDBC
 
 ---
