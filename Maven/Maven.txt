@@ -1,0 +1,48 @@
+Maven is a Project management tool 
+
+when we are building a prject we need to compile our file 
+run our file , test our file , then packaging it and finally deploy it 
+
+And normally we can do that with the help of IDEs
+But sometimes we need to use some external libraries 
+like for conecting java to database we need a connector which depends on the DBMS we are working with 
+
+Example for MySQL, we need MySQL connector.
+For Postgres, we need Postgres connector.
+
+Hibernate :-Tool which helps you to save data in database
+without writing a SQL query. 
+To make hibernate work we need libraries in hibernate libraries here means JAR files we need to get these JAR files
+
+to get Those JAR files Go to google and search for hibernate JAR files and we can download it 
+different IDEs Support different JAR files
+
+if we are working with JDBC  where we are connecting with MYSQL we just need one conector
+But For Hibernate we need Multiple JAR files  because the main dependency which you have
+is a JAR file of Hibernate,
+but Hibernate itself is dependent on the other JAR files.
+We call them as transitive dependencies.
+So basically you need to get all the dependencies,
+all the JAR files in your machine.
+and we can say we can do that becuase e have to do it only once which we will do only once which is the start of project 
+
+But incase infuture we want to upgrade our dependecies at that point we will haave to downloas all the dependencies
+ 
+WHY Maven ?
+let's say if you're working with Spring Framework.Now Spring needs their own dependencies, own JAR files.
+And now Spring and Hibernate will work together.That also means that the JAR files which you have,
+of course, they will also have their versions.So the Spring will work with Hibernate.
+So let's say whatever version you're using for Springshould match with the version of Hibernate.So let's say if Spring 5 works with Hibernate 4,
+there's a chance that Spring 5will not work with Hibernate 5,or Spring 6 will not work with Hibernate 4.
+So that means every time you want to upgrade somethingor make some changes,you need to get the JAR files again downloaded.So that's one problem.
+Second problem is what if you are giving your projectto your colleague for testing or code review,
+or maybe they want to add something in the project?So we have to make sure that they also have the same dependencies
+which you have added.So they will also go to Google.
+They will also download added work,plus they have to make sure they get the right version
+which you are using. What if they're using some different version?
+It will not work.And that's where we need to make sure
+that all the versions are in sync.Plus, we want those features as well, right,
+which is compiling, running, testing,creating a package, installing, deploying.
+If you can get a tool which will help you with all these things, and that's where Maven comes to the picture.
+
+So Maven Helps to get Dependencies
