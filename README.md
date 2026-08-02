@@ -26,7 +26,7 @@ This repository documents my progress as I prepare for Software Development Engi
 - [X] Core Java
 - [X] OOP
 - [X] Advanced java
-- [ ] Maven
+- [X] Maven
 - [ ] JDBC
 
 ---
