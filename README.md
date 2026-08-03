@@ -27,11 +27,11 @@ This repository documents my progress as I prepare for Software Development Engi
 - [X] OOP
 - [X] Advanced java
 - [X] Maven
-- [ ] JDBC
+- [X] JDBC
 
 ---
 
 ### 🚀 Phase 2: Backend Development
-
+- [ ] Hibernate
 - [ ] Spring Framework
 - [ ] Spring Boot
