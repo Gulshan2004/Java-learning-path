@@ -2,22 +2,28 @@ package com.gulshan;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 
 public class Main {
     public static void main(String[] args) {
         Student s1= new Student();
-        s1.setsName("Gulshan");
-        s1.setRollNo(36);
+        s1.setsName("Abdullah");
+        s1.setRollNo(01);
         s1.setsAge(22);
 
         Configuration cfg = new Configuration();
+        cfg.addAnnotatedClass(com.gulshan.Student.class);
+        cfg.configure();
 
         SessionFactory sf =cfg.buildSessionFactory();
         Session session = sf.openSession();
 
-        session.persist(s1);
+        Transaction transaction = session.beginTransaction();
+        session.persist(s1); //saving the data
+
+        transaction.commit();
 
         System.out.println(s1);
         }
