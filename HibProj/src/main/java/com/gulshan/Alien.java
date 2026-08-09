@@ -2,16 +2,17 @@ package com.gulshan;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="alien_table")
+//@Table(name="alien_table")
 public class Alien {
 
     @Id
     private int aid;
-    @Column(name="alien_name")
+    //@Column(name="alien_name")
     private String aname;
+   // @Transient
+    private String tech; //@Transient is used when we dont want some columns in the database and these columns are used only for processing realted stuff so we use transient annotation.
+    private Laptop laptop;
 
-    @Transient
-    private String tech; //@Transient is used when we dont want some columns in the database and these columns are used only for processing realted stuff so we use transient annotation
 
     public int getAid() {
         return aid;
@@ -32,9 +33,16 @@ public class Alien {
     public String getTech() {
         return tech;
     }
-
     public void setTech(String tech) {
         this.tech = tech;
+    }
+
+    public Laptop getLaptop() {
+        return laptop;
+    }
+
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
     }
 
     @Override
@@ -43,6 +51,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
+                ", laptop=" + laptop +
                 '}';
     }
 }

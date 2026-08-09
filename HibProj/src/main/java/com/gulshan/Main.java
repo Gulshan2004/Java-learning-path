@@ -45,11 +45,16 @@ public class Main {
         */
 
 
+        Laptop l1= new Laptop();
+        l1.setBrand("Asus");
+        l1.setModel("Rog");
+        l1.setRam(16);
 
         Alien a1 =new Alien();
         a1.setAid(101);
         a1.setAname("Gulshan");
         a1.setTech("Java");
+        a1.setLaptop(l1);
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.gulshan.Alien.class)
@@ -61,6 +66,10 @@ public class Main {
         Transaction transaction = session1.beginTransaction();
         session1.persist(a1);
         transaction.commit();
+
+        Alien a2= session1.find(Alien.class,101); //for fetching the records
+        System.out.println(a2);
+
         session1.close();
         sf.close();
     }
