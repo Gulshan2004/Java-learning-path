@@ -8,12 +8,12 @@ import org.hibernate.cfg.Configuration;
 
 public class Main {
     public static void main(String[] args) {
-        Student s1= new Student();
-        s1.setsName("Faisal");
-        s1.setRollNo(40);
-        s1.setsAge(22);
+/*        Student s1= new Student();
+          s1.setsName("Anvit");
+          s1.setRollNo(106);
+          s1.setsAge(29);
 
-        Student s2 =null;
+        //Student s2 =null;
 
 //        Configuration cfg = new Configuration();
 //        cfg.addAnnotatedClass(com.gulshan.Student.class);
@@ -26,17 +26,44 @@ public class Main {
                 .buildSessionFactory();
         Session session = sf.openSession();
 
-        s2 = session.find(Student.class,46); //use to get the data from db based on the primary key
+       // session.merge(s1); // merge() is used for updating  and adding new entries to the db
 
-       // Transaction transaction = session.beginTransaction();
-       // session.persist(s1); //saving the data
-        // transaction.commit();
+        //s2 = session.find(Student.class,46); //use to get the data from db based on the primary key
+
+        //session.remove(s1); //remove() is used to delete an entry from the database
+
+        Transaction transaction = session.beginTransaction();
+
+       session.persist(s1); //saving the data
+
+       transaction.commit();
+
+       session.close();
+       sf.close();
+
+        System.out.println(s1);
+        */
 
 
-        session.close();
+
+        Alien a1 =new Alien();
+        a1.setAid(101);
+        a1.setAname("Gulshan");
+        a1.setTech("Java");
+
+        SessionFactory sf = new Configuration()
+                .addAnnotatedClass(com.gulshan.Alien.class)
+                .configure()
+                .buildSessionFactory();
+
+        Session session1 = sf.openSession();
+
+        Transaction transaction = session1.beginTransaction();
+        session1.persist(a1);
+        transaction.commit();
+        session1.close();
         sf.close();
-        System.out.println(s2);
-        }
+    }
     }
 /*NOTE:-
 before sessionFactory we need configuration object
