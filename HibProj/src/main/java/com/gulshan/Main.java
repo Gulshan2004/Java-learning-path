@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import java.util.Arrays;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -46,25 +48,39 @@ public class Main {
 
 
         Laptop l1= new Laptop();
+        l1.setLid(1);
         l1.setBrand("Asus");
         l1.setModel("Rog");
         l1.setRam(16);
+
+        Laptop l2= new Laptop();
+        l2.setLid(2);
+        l2.setBrand("Dell");
+        l2.setModel("Inspiron 15");
+        l2.setRam(8);
 
         Alien a1 =new Alien();
         a1.setAid(101);
         a1.setAname("Gulshan");
         a1.setTech("Java");
-        a1.setLaptop(l1);
+        a1.setLaptops(Arrays.asList(l1,l2));
+
+        l1.setAlien(a1);
+        l2.setAlien(a1);
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.gulshan.Alien.class)
+                .addAnnotatedClass(com.gulshan.Laptop.class)
                 .configure()
                 .buildSessionFactory();
 
         Session session1 = sf.openSession();
 
         Transaction transaction = session1.beginTransaction();
+        session1.persist(l1);
+        session1.persist(l2);
         session1.persist(a1);
+
         transaction.commit();
 
         Alien a2= session1.find(Alien.class,101); //for fetching the records

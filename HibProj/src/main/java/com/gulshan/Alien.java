@@ -1,6 +1,8 @@
 package com.gulshan;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 //@Table(name="alien_table")
 public class Alien {
@@ -11,7 +13,12 @@ public class Alien {
     private String aname;
    // @Transient
     private String tech; //@Transient is used when we dont want some columns in the database and these columns are used only for processing realted stuff so we use transient annotation.
-    private Laptop laptop;
+
+//    @OneToOne
+//    private Laptop laptop; // this was for a single laptop
+
+    @OneToMany(mappedBy = "alien")
+    private List<Laptop> laptops;
 
 
     public int getAid() {
@@ -37,12 +44,21 @@ public class Alien {
         this.tech = tech;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
+//    public Laptop getLaptop() {
+//        return laptop;
+//    }
+//
+//    public void setLaptop(Laptop laptop) {
+//        this.laptop = laptop;
+//    }
+
+
+    public List<Laptop> getLaptops() {
+        return laptops;
     }
 
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
     }
 
     @Override
@@ -51,7 +67,7 @@ public class Alien {
                 "aid=" + aid +
                 ", aname='" + aname + '\'' +
                 ", tech='" + tech + '\'' +
-                ", laptop=" + laptop +
+                ", laptop=" + laptops +
                 '}';
     }
 }
