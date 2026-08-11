@@ -17,8 +17,11 @@ public class Alien {
 //    @OneToOne
 //    private Laptop laptop; // this was for a single laptop
 
-    @OneToMany(mappedBy = "alien")
-    private List<Laptop> laptops;
+//    @OneToMany(mappedBy = "alien")
+//    private List<Laptop> laptops;
+
+    @ManyToMany
+    private List<Laptop> laptops; // an alien can haive multiple laptops thats why list of laptops
 
 
     public int getAid() {

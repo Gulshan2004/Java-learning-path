@@ -1,9 +1,8 @@
 package com.gulshan;
 
-import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 //@Embeddable // Is Used to mark a class as value object which dont have primary key allowing its field to be stored as part of another entity's table.
 @Entity
@@ -15,8 +14,8 @@ public class Laptop {
     private String model;
     private int ram;
 
-    @ManyToOne
-    private Alien alien;
+    @ManyToMany(mappedBy = "laptops") //here ( mapedBy is used to avoid mapping laptop with alien )
+    private List<Alien> alien; //because a laptop can belong to multiple aliens hence we create  list
 
     public int getLid() {
         return lid;
@@ -50,11 +49,11 @@ public class Laptop {
         this.ram = ram;
     }
 
-    public Alien getAlien() {
+    public List<Alien> getAlien() {
         return alien;
     }
 
-    public void setAlien(Alien alien) {
+    public void setAlien(List<Alien> alien) {
         this.alien = alien;
     }
 

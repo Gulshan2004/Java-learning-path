@@ -59,14 +59,38 @@ public class Main {
         l2.setModel("Inspiron 15");
         l2.setRam(8);
 
+        Laptop l3= new Laptop();
+        l3.setLid(3);
+        l3.setBrand("Apple");
+        l3.setModel("Macbook");
+        l3.setRam(32);
+
+
+
         Alien a1 =new Alien();
         a1.setAid(101);
         a1.setAname("Gulshan");
         a1.setTech("Java");
-        a1.setLaptops(Arrays.asList(l1,l2));
 
-        l1.setAlien(a1);
-        l2.setAlien(a1);
+        Alien a2 =new Alien();
+        a2.setAid(102);
+        a2.setAname("Harsh");
+        a2.setTech(" c++");
+
+
+        Alien a3 =new Alien();
+        a3.setAid(103);
+        a3.setAname("Ayush");
+        a3.setTech("Python");
+
+        a1.setLaptops(Arrays.asList(l1,l2,l3));
+        a2.setLaptops(Arrays.asList(l2,l3));
+        a1.setLaptops(Arrays.asList(l1));
+
+        l1.setAlien(Arrays.asList(a1,a3));
+        l2.setAlien(Arrays.asList(a1,a2));
+        l3.setAlien(Arrays.asList(a2));
+
 
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.gulshan.Alien.class)
@@ -79,11 +103,15 @@ public class Main {
         Transaction transaction = session1.beginTransaction();
         session1.persist(l1);
         session1.persist(l2);
+        session1.persist(l3);
+
         session1.persist(a1);
+        session1.persist(a2);
+        session1.persist(a3);
 
         transaction.commit();
 
-        Alien a2= session1.find(Alien.class,101); //for fetching the records
+        a2 = session1.find(Alien.class, 102);
         System.out.println(a2);
 
         session1.close();
