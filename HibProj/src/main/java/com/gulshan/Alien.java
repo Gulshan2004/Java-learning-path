@@ -20,7 +20,8 @@ public class Alien {
 //    @OneToMany(mappedBy = "alien")
 //    private List<Laptop> laptops;
 
-    @ManyToMany
+    //@ManyToMany
+    @OneToMany
     private List<Laptop> laptops; // an alien can haive multiple laptops thats why list of laptops
 
 

@@ -77,19 +77,12 @@ public class Main {
         a2.setAname("Harsh");
         a2.setTech(" c++");
 
+        a1.setLaptops(Arrays.asList(l1,l2));
+        a2.setLaptops(Arrays.asList(l3));
 
-        Alien a3 =new Alien();
-        a3.setAid(103);
-        a3.setAname("Ayush");
-        a3.setTech("Python");
-
-        a1.setLaptops(Arrays.asList(l1,l2,l3));
-        a2.setLaptops(Arrays.asList(l2,l3));
-        a1.setLaptops(Arrays.asList(l1));
-
-        l1.setAlien(Arrays.asList(a1,a3));
-        l2.setAlien(Arrays.asList(a1,a2));
-        l3.setAlien(Arrays.asList(a2));
+//        l1.setAlien(Arrays.asList(a1,a3));
+//        l2.setAlien(Arrays.asList(a1,a2));
+//        l3.setAlien(Arrays.asList(a2));
 
 
         SessionFactory sf = new Configuration()
@@ -107,14 +100,21 @@ public class Main {
 
         session1.persist(a1);
         session1.persist(a2);
-        session1.persist(a3);
 
         transaction.commit();
 
-        a2 = session1.find(Alien.class, 102);
-        System.out.println(a2);
+//        a2 = session1.find(Alien.class, 101);
+//        System.out.println(a2);
 
         session1.close();
+
+        Session session2 = sf.openSession();
+
+        a2 = session2.find(Alien.class, 101);
+        System.out.println(a2);
+
+        session2.close();
+
         sf.close();
     }
     }
