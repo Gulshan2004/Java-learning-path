@@ -124,4 +124,7 @@ buildSessionFactory() will give the object of sessionFactory
 To open the session we need Session Factory and its a heavy weight process  so use this once per database in the application
 also We need to  Use try with resources along with  SessionFactory or we can close the session and the session Factory
 * For every unit of work we will be using session hence we can open session can be used n no. of times
-we dont need transaction object when we are fetching the records it is only required when we are doing some sort of manipulation */
+we dont need transaction object when we are fetching the records it is only required when we are doing some sort of manipulation
+
+Level1 - Cache works in the same session
+lazy-fetch = Is used to fetch  only those entries that belons to the same entity  so to get all the entries the user need to explicity print the variable that stores fetch recult  */
