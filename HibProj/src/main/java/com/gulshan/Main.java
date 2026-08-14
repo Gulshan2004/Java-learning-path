@@ -4,8 +4,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
 
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Main {
@@ -46,26 +48,24 @@ public class Main {
         System.out.println(s1);
         */
 
-
+/*
         Laptop l1= new Laptop();
-        l1.setLid(1);
+        l1.setLid(4);
         l1.setBrand("Asus");
-        l1.setModel("Rog");
+        l1.setModel("Strix");
         l1.setRam(16);
 
         Laptop l2= new Laptop();
         l2.setLid(2);
         l2.setBrand("Dell");
         l2.setModel("Inspiron 15");
-        l2.setRam(8);
+          l2.setRam(8);
 
         Laptop l3= new Laptop();
         l3.setLid(3);
         l3.setBrand("Apple");
         l3.setModel("Macbook");
         l3.setRam(32);
-
-
 
         Alien a1 =new Alien();
         a1.setAid(101);
@@ -80,9 +80,9 @@ public class Main {
         a1.setLaptops(Arrays.asList(l1,l2));
         a2.setLaptops(Arrays.asList(l3));
 
-//        l1.setAlien(Arrays.asList(a1,a3));
-//        l2.setAlien(Arrays.asList(a1,a2));
-//        l3.setAlien(Arrays.asList(a2));
+        l1.setAlien(Arrays.asList(a1,a3));
+        l2.setAlien(Arrays.asList(a1,a2));
+        l3.setAlien(Arrays.asList(a2));
 
 
         SessionFactory sf = new Configuration()
@@ -103,8 +103,8 @@ public class Main {
 
         transaction.commit();
 
-//        a2 = session1.find(Alien.class, 101);
-//        System.out.println(a2);
+        a2 = session1.find(Alien.class, 101);
+        System.out.println(a2);
 
         session1.close();
 
@@ -116,6 +116,38 @@ public class Main {
         session2.close();
 
         sf.close();
+*/
+
+
+        Laptop l1= new Laptop();
+        l1.setLid(4);
+        l1.setBrand("Asus");
+        l1.setModel("Strix");
+        l1.setRam(16);
+
+        SessionFactory sf = new Configuration()
+                .addAnnotatedClass(Laptop.class)
+                .configure()
+                .buildSessionFactory();
+
+        Session session3 = sf.openSession();
+
+//        Transaction transaction = session3.beginTransaction();
+//        session3.persist(l1);
+//        transaction.commit();
+
+        //select * from laptop where ram =32 -> Sql
+        //from Laptop where ram =32
+        Query query = session3.createQuery("from Laptop where ram =32",Laptop.class);
+        List<Laptop> laptops =query.getResultList();
+
+        l1 = session3.find(Laptop.class, 3);
+        System.out.println(l1);
+
+        session3.close();
+
+        sf.close();
+
     }
     }
 /*NOTE:-
