@@ -137,12 +137,28 @@ public class Main {
 //        transaction.commit();
 
         //select * from laptop where ram =32 -> Sql
-        //from Laptop where ram =32
-        Query query = session3.createQuery("from Laptop where ram =32",Laptop.class);
-        List<Laptop> laptops =query.getResultList();
+        //from Laptop where ram =32 ->hql
 
-        l1 = session3.find(Laptop.class, 3);
-        System.out.println(l1);
+
+//        Query query = session3.createQuery("from Laptop where ram =32",Laptop.class);
+
+        String brand = "Asus";
+
+//        Query query = session3.createQuery("from Laptop where brand like ?1"); //this will give the entire field of that particular laptop
+//        Query query = session3.createQuery("Select model from Laptop where brand like ?1"); //this will select only the model of that particular laptop
+
+        Query query = session3.createQuery("Select brand,model from Laptop where brand like ?1");
+        query.setParameter(1,brand); // 1 is gettig replaced by brand
+        List<Object[]> laptops =query.getResultList();
+
+//        l1 = session3.find(Laptop.class, 3);
+//        System.out.println(l1);
+
+        for(Object[] data : laptops){
+            System.out.println((String)data[0] + " "+ (String) data[1]); //by deafult thet are objects so we needed to typecast them
+        }
+
+        System.out.println(laptops);
 
         session3.close();
 
@@ -160,3 +176,7 @@ we dont need transaction object when we are fetching the records it is only requ
 
 Level1 - Cache works in the same session
 lazy-fetch = Is used to fetch  only those entries that belons to the same entity  so to get all the entries the user need to explicity print the variable that stores fetch recult  */
+
+/*Note:-
+* In HQL if we need to pass ? followed by a number which is used when we are dealing with multiple entiries
+* so to avoid confusions we use these numbers  so that whem we replace them later  we know exactly which number are we targaating */
