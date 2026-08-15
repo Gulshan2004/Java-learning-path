@@ -10,7 +10,6 @@
 - [x] Exception Handling
 - [x] File Handling
 - [x] Multithreading
-- [ ] JDBC
 
 ---
 
@@ -23,18 +22,24 @@
 
 ---
 
-### Spring Boot
+### Java Bacekend with Spring Boot
 
+- [x] JDBC
+- [x] Hibernate
 - [ ] Spring Core
 - [ ] Spring Boot
+- [ ] Spring JDBC
+- [ ] Web MVC without Spring boot 
 - [ ] REST API
 - [ ] JPA
+- [ ] Spring AOP
 - [ ] Security
+- [ ] JWT and OAuth2
+- [ ] Spring AI
+- [ ] Microservices
 
 ---
 
 ### Projects
 
-- [ ] Banking System
-- [ ] Library Management
-- [ ] Employee Management
+- TO BE CONTINUED ....

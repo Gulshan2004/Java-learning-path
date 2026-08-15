@@ -26,12 +26,21 @@ This repository documents my progress as I prepare for Software Development Engi
 - [X] Core Java
 - [X] OOP
 - [X] Advanced java
-- [X] Maven
-- [X] JDBC
 
 ---
 
 ### 🚀 Phase 2: Backend Development
-- [ ] Hibernate
-- [ ] Spring Framework
+- [x] JDBC
+- [x] Hibernate
+- [ ] Spring Core
 - [ ] Spring Boot
+- [ ] Spring JDBC
+- [ ] Web MVC without Spring boot
+- [ ] REST API
+- [ ] JPA
+- [ ] Spring AOP
+- [ ] Security
+- [ ] JWT and OAuth2
+- [ ] Spring AI
+- [ ] Microservices
+
