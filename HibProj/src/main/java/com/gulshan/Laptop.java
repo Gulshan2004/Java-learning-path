@@ -6,6 +6,7 @@ import java.util.List;
 
 //@Embeddable // Is Used to mark a class as value object which dont have primary key allowing its field to be stored as part of another entity's table.
 @Entity
+@Cacheable
 public class Laptop {
 
     @Id

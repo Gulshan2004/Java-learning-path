@@ -46,7 +46,9 @@ public class Main {
        sf.close();
 
         System.out.println(s1);
-        */
+*/
+
+
 
 /*
         Laptop l1= new Laptop();
@@ -119,6 +121,8 @@ public class Main {
 */
 
 
+
+/*
         Laptop l1= new Laptop();
         l1.setLid(4);
         l1.setBrand("Asus");
@@ -139,8 +143,7 @@ public class Main {
         //select * from laptop where ram =32 -> Sql
         //from Laptop where ram =32 ->hql
 
-
-//        Query query = session3.createQuery("from Laptop where ram =32",Laptop.class);
+//      Query query = session3.createQuery("from Laptop where ram =32",Laptop.class);
 
         String brand = "Asus";
 
@@ -157,10 +160,33 @@ public class Main {
         for(Object[] data : laptops){
             System.out.println((String)data[0] + " "+ (String) data[1]); //by deafult thet are objects so we needed to typecast them
         }
-
-        System.out.println(laptops);
+//
+//        System.out.println(laptops);
 
         session3.close();
+        sf.close();
+*/
+
+
+// Level  2 Cache uisng Ehcache
+        SessionFactory sf = new Configuration()
+                .addAnnotatedClass(Laptop.class)
+                .configure()
+                .buildSessionFactory();
+
+        Session session4 = sf.openSession();
+        Laptop l1 = session4.find(Laptop.class, 2); //due to the level 1 cache it will execute the query only once
+        System.out.println(l1);
+//        Laptop l2 = session4.find(Laptop.class, 2);
+//        System.out.println(l2);
+
+        session4.close();
+
+        Session session5 = sf.openSession();
+        Laptop l2 = session5.find(Laptop.class, 2);
+        System.out.println(l2);
+
+        session5.close();
 
         sf.close();
 
