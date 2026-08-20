@@ -3,11 +3,13 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="alien1" class = "com.gulshan.Alien">
+<!--    <bean id="alien1" class = "com.gulshan.Alien" scope="singleton" > </bean>-->
+<!--    <bean id="alien1" class = "com.gulshan.Alien" scope="prototype" > </bean>-->
+    <bean id="alien1" class = "com.gulshan.Alien" >
+    <property name ="age" value ="21"> </property>
     </bean>
 
-    <bean id="lap" class = "com.gulshan.Laptop">
-    </bean>
+    <bean id="lap" class = "com.gulshan.Laptop"> </bean>
 
 </beans>
 

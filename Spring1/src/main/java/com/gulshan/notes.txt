@@ -1,0 +1,37 @@
+Application context is the spring container that creates , stores and manages beaans
+ApplicationContext is an advanced IoC container that manages Spring beans and their lifecycle.
+
+the more the no. of bean created in the Spring.xml for the same class the more object will be crated for that class
+
+getBean() is used to fecth an object from the container
+
+ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+here Spring creates bean objects when the container is initialized.
+
+BEAN SCOPE:-
+Singeleton (Default):- <bean id="alien1" class = "com.gulshan.Alien" scope="singleton" > </bean>
+Only ONE object is created. All references point to the same object.
+
+Prototype Scope :- <bean id="alien1" class = "com.gulshan.Alien" scope="prototype" > </bean>
+Every getBean() call creates a new object.
+
+SETTER INJECTION :-
+Spring injects values using setter methods.
+
+Class Alien.java:-
+public class Alien {
+    private int age;
+    public void setAge(int age){
+        this.age = age;
+    }
+}
+
+spring.xml:-
+<bean id="alien1" class="com.telusko.Alien">
+    <property name="age" value="21"/>
+</bean>
+
+Spring internally does:
+Alien a = new Alien();
+a.setAge(21);
+
