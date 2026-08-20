@@ -6,7 +6,8 @@
 <!--    <bean id="alien1" class = "com.gulshan.Alien" scope="singleton" > </bean>-->
 <!--    <bean id="alien1" class = "com.gulshan.Alien" scope="prototype" > </bean>-->
     <bean id="alien1" class = "com.gulshan.Alien" >
-    <property name ="age" value ="21"> </property>
+<!--    <property name ="age" value ="21"> </property>-->
+        <constructor-arg value="21"> </constructor-arg>
     <property name ="lap"  ref ="lap1"> </property>
     </bean>
 

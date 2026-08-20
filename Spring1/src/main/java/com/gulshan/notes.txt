@@ -35,14 +35,18 @@ Spring internally does:
 Alien a = new Alien();
 a.setAge(21);
 
-
+REF ATTRIBUTE:-
 In the spring.xml in the <property> tag if we want to assign to a primitive type we use value.
 If we want to assign a reference or an object we use "ref"  here  ref ="lap1"  in which we assign the id of that particular object we want to connect the bean with  this avoids creating objects manually
 also the bean must be created or should exist  before passing its id to " ref "of another bean.
+This is a part of setter injection.
 
  <bean id="alien1" class = "com.gulshan.Alien" >
     <property name ="age" value ="21"> </property>
     <property name ="lap"  ref ="lap1"> </property>
     </bean>
 
-    <bean id="lap1" class = "com.gulshan.Laptop"> </bean>.
+    <bean id="lap1" class = "com.gulshan.Laptop"> </bean>
+
+CONSTRUCTOR INJECTION:-
+instead of using setter injection we can use constructor injection as well which can be done as soon as we have the object created

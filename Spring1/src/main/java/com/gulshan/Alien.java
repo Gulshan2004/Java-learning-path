@@ -7,7 +7,10 @@ public class Alien {
     public Alien(){
         System.out.println("Object Created");
     }
-
+    public Alien(int age){
+        System.out.println("para constructor Called");
+        this.age =age;
+    }
     public int getAge() {
         return age;
     }
