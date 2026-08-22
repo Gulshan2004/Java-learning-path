@@ -3,14 +3,18 @@ package com.gulshan;
 public class Alien {
 
     private int age;
+    private int salary;
     private Laptop lap;
     public Alien(){
         System.out.println("Object Created");
     }
-    public Alien(int age){
+
+    public Alien(int age,Laptop lap) {
         System.out.println("para constructor Called");
-        this.age =age;
+        this.age = age;
+        this.lap =lap;
     }
+
     public int getAge() {
         return age;
     }

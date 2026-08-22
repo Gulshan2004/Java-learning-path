@@ -37,7 +37,7 @@ a.setAge(21);
 
 REF ATTRIBUTE:-
 In the spring.xml in the <property> tag if we want to assign to a primitive type we use value.
-If we want to assign a reference or an object we use "ref"  here  ref ="lap1"  in which we assign the id of that particular object we want to connect the bean with  this avoids creating objects manually
+but If we want to assign a reference or an object we use "ref"  here  ref ="lap1"  in which we assign the id of that particular object we want to connect the bean with  this avoids creating objects manually
 also the bean must be created or should exist  before passing its id to " ref "of another bean.
 This is a part of setter injection.
 
@@ -50,3 +50,23 @@ This is a part of setter injection.
 
 CONSTRUCTOR INJECTION:-
 instead of using setter injection we can use constructor injection as well which can be done as soon as we have the object created
+<constructor-arg value="21"> </constructor-arg>
+ we can assign the value using the constructor-arg as well this is difine s inside the spring.xml file itself
+
+    NOTE:-
+             <property name ="lap"  ref ="lap1"> </property>
+             <constructor-arg value="21"> </constructor-arg>
+
+       this was working when it was single parameterized constructor in alien but wo double parametrized constructor we need to use something else i.e instead of using setter injection here using property
+       we can use   <constructor-arg ref="lap1"> </constructor-arg>
+
+    NOTE:-
+       In Constructor injection the values are passed based on the order of parameters in the constructor means if
+       alien(int age , Laptop lap){
+       this.age = age;
+       this.lap = lap;
+       }
+       then  in the spring.xml we cant inject values in the order
+               <constructor-arg name="lap" ref="lap1"> </constructor-arg>
+               <constructor-arg name="age" value="21"> </constructor-arg>
+            here lap is injected first and then age so there are several ways to avoid it which are by using the type and index (Preferred) attribute this avoids the order based error
