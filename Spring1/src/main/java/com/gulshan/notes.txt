@@ -70,3 +70,17 @@ instead of using setter injection we can use constructor injection as well which
                <constructor-arg name="lap" ref="lap1"> </constructor-arg>
                <constructor-arg name="age" value="21"> </constructor-arg>
             here lap is injected first and then age so there are several ways to avoid it which are by using the type and index (Preferred) attribute this avoids the order based error
+
+ AUTOWIRING:-
+   <property name ="com"  ref ="com"> </property>
+  here its a wire which connects my alien to the laptop so instead of creating it manually , spring should ne smart enough to handle this thing automatticaly so here comes the concept of Autowiring.
+
+    <bean id="alien1" class = "com.gulshan.Alien"  autowire ="byName">  this will automatically search for the field by name using  the autowire ="byName"  attribunte.
+
+    also auto wire only works when   <property name ="com"  ref ="com1> </property>   is not mentioned if this is mentioned then it won't work .
+
+    autowire= "byType" is used when we want search by type instead of by name so
+    <bean id="com1" class = "com.gulshan.Laptop"> </bean> instead of referring to  the id it uses the class = "com.gulshan.Laptop" as laptop is a  Computer only.
+     <bean id="com2" class = "com.gulshan.Desktop"> </bean> same goes for this provide only one such bean should be present at a time .
+
+    in case both the beans  exists at the same time we then we can use the primary attribute as true hence the autowire attribute  will select that particular bean first  this will avoid confusion between which one to select
