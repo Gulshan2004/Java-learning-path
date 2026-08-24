@@ -86,3 +86,9 @@ instead of using setter injection we can use constructor injection as well which
     in case both the beans  exists at the same time we then we can use the primary attribute as true hence the autowire attribute  will select that particular bean first  this will avoid confusion between which one to select
 
 LAZY INITIALIZATION OF THE BEAN:-
+    In case I dont want to load the desktop object by default when the container loads i dont want this obect to be created i want this to be created only when i call it for the firat time
+    to achive this we use the  attribute with the bean of that particular class  :-
+         <bean id="com2" class = "com.gulshan.Desktop" lazy-init="true"> </bean>
+    so the object will only be created when we want it  and it will be Singelto only.
+
+    also we have a Non lazy bean (  Eager ) which is dependent on a lazy bean still it will create the object of lazy beam in that case

@@ -20,6 +20,6 @@ public class App
 
 //        obj2.code();
 
-//        Desktop obj = (Desktop) context.getBean("com2");
+        Desktop obj = (Desktop) context.getBean("com2");
     }
 }
