@@ -6,7 +6,7 @@ public class Alien {
     private int salary;
     private Computer com;
     public Alien(){
-//        System.out.println("Object Created");
+        System.out.println("Alien Object Created");
     }
 
 //    public Alien(int age, Computer com) {

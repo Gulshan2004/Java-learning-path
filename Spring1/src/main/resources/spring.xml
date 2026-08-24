@@ -8,7 +8,7 @@
 
     <bean id="alien1" class = "com.gulshan.Alien"  autowire ="byType">
         <property name ="age" value ="21"> </property>
-<!--        <property name ="com"  ref ="com1> </property>-->
+        <property name ="com"  ref ="com2"> </property>
 
 <!--        <constructor-arg type= "com.gulshan.Laptop" ref="lap1"> </constructor-arg>-->
 <!--        <constructor-arg type= "int" value="21"> </constructor-arg>-->
@@ -22,7 +22,7 @@
     </bean>
 
     <bean id="com1" class = "com.gulshan.Laptop" primary="true"> </bean>
-    <bean id="com2" class = "com.gulshan.Desktop"> </bean>
+    <bean id="com2" class = "com.gulshan.Desktop" lazy-init="true"> </bean>
 
 </beans>
 

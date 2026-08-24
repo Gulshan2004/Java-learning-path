@@ -84,3 +84,5 @@ instead of using setter injection we can use constructor injection as well which
      <bean id="com2" class = "com.gulshan.Desktop"> </bean> same goes for this provide only one such bean should be present at a time .
 
     in case both the beans  exists at the same time we then we can use the primary attribute as true hence the autowire attribute  will select that particular bean first  this will avoid confusion between which one to select
+
+LAZY INITIALIZATION OF THE BEAN:-
