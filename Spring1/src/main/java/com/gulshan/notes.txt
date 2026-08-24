@@ -100,3 +100,16 @@ GETBEAN BY TYPE :-
 
     so we can use another getBean() method which take two parameter i.e the bean id and the class type this avoid explixit typcasting
      Alien obj1 = context.getBean("alien1", Alien.class);
+
+INNER BEAN :-
+    This concept is used when we dont want to refer a bean outside a class so that others cant use it so we use the concept of inner bean
+    here alien refers to computer and laptop is an implimentation of computer hence this laptop bean is available fot the entire application so any one can use it so  we  limit the usage  of this bean by declaring it inside the property tag
+
+    <bean id="alien1" class = "com.gulshan.Alien"  autowire ="byType">
+          <property name ="age" value ="21"> </property>
+          <property name ="com" >
+                    <bean id="com1" class = "com.gulshan.Laptop" primary="true"> </bean>
+                </property>
+    </bean>
+
+   hence the laptop becomes an inner bean for alien and can only used by the alien
