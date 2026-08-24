@@ -3,7 +3,7 @@ ApplicationContext is an advanced IoC container that manages Spring beans and th
 
 the more the no. of bean created in the Spring.xml for the same class the more object will be crated for that class
 
-getBean() is used to fecth an object from the container
+getBean() is used to fecth an object from the container it returns of type object
 
 ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 here Spring creates bean objects when the container is initialized.
@@ -89,6 +89,14 @@ LAZY INITIALIZATION OF THE BEAN:-
     In case I dont want to load the desktop object by default when the container loads i dont want this obect to be created i want this to be created only when i call it for the firat time
     to achive this we use the  attribute with the bean of that particular class  :-
          <bean id="com2" class = "com.gulshan.Desktop" lazy-init="true"> </bean>
-    so the object will only be created when we want it  and it will be Singelto only.
+    so the object will only be created when we want it and it will be Singelto only.
 
     also we have a Non lazy bean (  Eager ) which is dependent on a lazy bean still it will create the object of lazy beam in that case
+
+GETBEAN BY TYPE :-
+    since the getBean() method returns of type object so we need to typeCast it to the type of class of object we want
+    Example:-
+     Alien obj1 = (Alien) context.getBean("alien1");
+
+    so we can use another getBean() method which take two parameter i.e the bean id and the class type this avoid explixit typcasting
+     Alien obj1 = context.getBean("alien1", Alien.class);

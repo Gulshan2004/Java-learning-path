@@ -10,7 +10,7 @@ public class App
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); //This will create the spring container and the configuration for that container is "spring.xml" it will create all the objects mentioned with the bean tag in the spring.xml .
         //Alien obj = new Alien();
-        Alien obj1 = (Alien) context.getBean("alien1"); //here we are just calling the object
+        Alien obj1 = context.getBean("alien1", Alien.class); //here we are just calling the object
 //        obj1.setAge(21);
         System.out.println(obj1.getAge());
         obj1.code();
@@ -20,6 +20,6 @@ public class App
 
 //        obj2.code();
 
-        Desktop obj = (Desktop) context.getBean("com2");
+//        Desktop obj = (Desktop) context.getBean("com2",Desktop.class);
     }
 }
