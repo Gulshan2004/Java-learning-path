@@ -13,6 +13,7 @@
             <bean id="com1" class = "com.gulshan.Laptop" primary="true"> </bean>
         </property>
 
+
 <!--        <constructor-arg type= "com.gulshan.Laptop" ref="lap1"> </constructor-arg>-->
 <!--        <constructor-arg type= "int" value="21"> </constructor-arg>-->
 
