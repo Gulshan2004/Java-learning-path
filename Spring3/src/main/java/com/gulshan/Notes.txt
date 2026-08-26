@@ -20,3 +20,13 @@ This is the same idea as XML configuration, but instead of writing bean definiti
     With Java configuration we use:
     ApplicationContext context =
         new AnnotationConfigApplicationContext(AppConfig.class);
+
+BEAN NAME:-
+ The default name of bean is the desktop itself so in the AppConfig file if the method name is desktop then the dafault name of the bean will be desktop
+ Desktop dt = context.getBean("desktop",Desktop.class);  here the first parameter is the bean name
+
+ for changing the bean name we can specify the name in the @bean annotation like @Bean(name ="bean_name") example :- @Bean(name="com2")
+ so in the App.java file we can pass this name Desktop dt = context.getBean("com2",Desktop.class);
+
+ also we can pass multiple names to the name @Bean annotation i.e  @Bean(name= {"com2","desktop1","beast"})
+ and among all these names we can use any one name and pass it as a parameter in the App.java i.e  so in the App.java file we can pass this name Desktop dt = context.getBean("beast",Desktop.class);
