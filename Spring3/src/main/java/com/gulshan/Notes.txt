@@ -30,3 +30,33 @@ BEAN NAME:-
 
  also we can pass multiple names to the name @Bean annotation i.e  @Bean(name= {"com2","desktop1","beast"})
  and among all these names we can use any one name and pass it as a parameter in the App.java i.e  so in the App.java file we can pass this name Desktop dt = context.getBean("beast",Desktop.class);
+
+
+SCOPE ANNOTATION:-
+    Scope = how many instances of a Spring Bean should exist.
+    The two scopes we have are 1) Singleton 2) prototype
+
+    SINGLETON:-
+    Singleton is the default scope in spring , only one object is created  so every time your request that bean you get the same object
+    @Bean
+    public Desktop desktopSingleton() {
+        return new Desktop();
+    }
+     so in the App.java
+     Desktop dt1 = context.getBean("desktopSingleton", Desktop.class);
+     Desktop dt2 = context.getBean("desktopSingleton", Desktop.class);
+
+     here both dt1 and dt2 point to the same object.
+
+     PROTOTYPE:-
+     A new object is created every time the Bean is requested.
+     @Bean
+     @Scope("prototype")
+     public Desktop desktopPrototype() {
+         return new Desktop();
+     }
+     so in the App.java
+          Desktop dt1 = context.getBean("desktopSingleton", Desktop.class);
+          Desktop dt2 = context.getBean("desktopSingleton", Desktop.class);
+
+      here both dt1 and dt2 point to differenct objects.
