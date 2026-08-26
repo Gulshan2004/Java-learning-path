@@ -11,7 +11,7 @@ public class App
     {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Desktop dt = context.getBean(Desktop.class);
+        Desktop dt = context.getBean(Desktop.class);  // Once Spring creates the Bean,  dt refers to the Desktop object managed by Spring.
         dt.compile();
     }
 }

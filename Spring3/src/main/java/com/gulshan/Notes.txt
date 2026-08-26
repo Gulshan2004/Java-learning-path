@@ -1,0 +1,22 @@
+JAVA BASED CONFIG:-
+This is the same idea as XML configuration, but instead of writing bean definitions in spring.xml, we write them in a Java class.
+    @Configuration Tells Spring: "This class contains bean definitions."
+
+    @Configuration
+    public class AppConfig {
+    }
+
+    @Bean is Used to tell Spring which object it should manage its similar to using bean tag in the Spring.xml
+    @Configuration
+    public class AppConfig {
+        @Bean
+        public Desktop desktop() {
+            return new Desktop();
+        }
+    }
+    Here:
+    return new Desktop();  This creates the object, and @Bean tells Spring to manage that object as a Bean. The method name desktop becomes the bean name by default.
+
+    With Java configuration we use:
+    ApplicationContext context =
+        new AnnotationConfigApplicationContext(AppConfig.class);
