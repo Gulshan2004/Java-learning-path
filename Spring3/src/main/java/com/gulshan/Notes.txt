@@ -1,50 +1,51 @@
 JAVA BASED CONFIG:-
-This is the same idea as XML configuration, but instead of writing bean definitions in spring.xml, we write them in a Java class.
-    @Configuration Tells Spring: "This class contains bean definitions."
+        This is the same idea as XML configuration, but instead of writing bean definitions in spring.xml, we write them in a Java class.
+            @Configuration Tells Spring: "This class contains bean definitions."
 
-    @Configuration
-    public class AppConfig {
-    }
+            @Configuration
+            public class AppConfig {
+            }
 
-    @Bean is Used to tell Spring which object it should manage its similar to using bean tag in the Spring.xml
-    @Configuration
-    public class AppConfig {
-        @Bean
-        public Desktop desktop() {
-            return new Desktop();
-        }
-    }
-    Here:
-    return new Desktop();  This creates the object, and @Bean tells Spring to manage that object as a Bean. The method name desktop becomes the bean name by default.
+            @Bean is Used to tell Spring which object it should manage its similar to using bean tag in the Spring.xml
+            @Configuration
+            public class AppConfig {
+                @Bean
+                public Desktop desktop() {
+                    return new Desktop();
+                }
+            }
+            Here:
+            return new Desktop();  This creates the object, and @Bean tells Spring to manage that object as a Bean. The method name desktop becomes the bean name by default.
 
-    With Java configuration we use:
-    ApplicationContext context =
-        new AnnotationConfigApplicationContext(AppConfig.class);
+            With Java configuration we use:
+            ApplicationContext context =
+                new AnnotationConfigApplicationContext(AppConfig.class);
 
 BEAN NAME:-
- The default name of bean is the desktop itself so in the AppConfig file if the method name is desktop then the dafault name of the bean will be desktop
- Desktop dt = context.getBean("desktop",Desktop.class);  here the first parameter is the bean name
+         The default name of bean is the desktop itself so in the AppConfig file if the method name is desktop then the dafault name of the bean will be desktop
 
- for changing the bean name we can specify the name in the @bean annotation like @Bean(name ="bean_name") example :- @Bean(name="com2")
- so in the App.java file we can pass this name Desktop dt = context.getBean("com2",Desktop.class);
+         Desktop dt = context.getBean("desktop",Desktop.class);  here the first parameter is the bean name
 
- also we can pass multiple names to the name @Bean annotation i.e  @Bean(name= {"com2","desktop1","beast"})
- and among all these names we can use any one name and pass it as a parameter in the App.java i.e  so in the App.java file we can pass this name Desktop dt = context.getBean("beast",Desktop.class);
+         for changing the bean name we can specify the name in the @bean annotation like @Bean(name ="bean_name") example :- @Bean(name="com2")
+         so in the App.java file we can pass this name Desktop dt = context.getBean("com2",Desktop.class);
+
+         also we can pass multiple names to the name @Bean annotation i.e  @Bean(name= {"com2","desktop1","beast"})
+         and among all these names we can use any one name and pass it as a parameter in the App.java i.e  so in the App.java file we can pass this name Desktop dt = context.getBean("beast",Desktop.class);
 
 
 SCOPE ANNOTATION:-
-    Scope = how many instances of a Spring Bean should exist.
-    The two scopes we have are 1) Singleton 2) prototype
+        Scope = how many instances of a Spring Bean should exist.
+        The two scopes we have are 1) Singleton 2) prototype
 
-    SINGLETON:-
-    Singleton is the default scope in spring , only one object is created  so every time your request that bean you get the same object
-    @Bean
-    public Desktop desktopSingleton() {
-        return new Desktop();
-    }
-     so in the App.java
-     Desktop dt1 = context.getBean("desktopSingleton", Desktop.class);
-     Desktop dt2 = context.getBean("desktopSingleton", Desktop.class);
+        SINGLETON:-
+        Singleton is the default scope in spring , only one object is created  so every time your request that bean you get the same object
+        @Bean
+        public Desktop desktopSingleton() {
+            return new Desktop();
+        }
+         so in the App.java
+         Desktop dt1 = context.getBean("desktopSingleton", Desktop.class);
+         Desktop dt2 = context.getBean("desktopSingleton", Desktop.class);
 
      here both dt1 and dt2 point to the same object.
 
@@ -60,3 +61,177 @@ SCOPE ANNOTATION:-
           Desktop dt2 = context.getBean("desktopSingleton", Desktop.class);
 
       here both dt1 and dt2 point to differenct objects.
+
+AUTOWIRE:-
+Spring automatically finds a required Bean and injects it into another Bean by type.
+
+There are three ways to inject dependencies
+    1) Field Injection
+    2) Setter Injection
+    3) Constructor Injection
+
+    FIELD INJECTION:-
+       Dependency is injected directly into the field.
+
+                @Component
+                class Alien {
+
+                    @Autowired
+                    private Computer computer;
+                }
+        Think:
+        Alien
+         ↓
+        computer field
+         ↓
+        Spring puts Computer here
+
+        Simple but less testable.
+
+    SETTER INJECTION:-
+        Setter Injection
+        Dependency is injected through a setter.
+
+                    @Component
+                    class Alien {
+                        private Computer computer;
+
+                        @Autowired
+                        public void setComputer(Computer computer) {
+                            this.computer = computer;
+                        }
+                    }
+        Think:-
+        Spring
+          ↓
+        setComputer(computer)
+
+        More flexible and useful when dependency can be optional.
+
+    CONSTRUCTOR INJECTION:-
+        Dependency is provided while creating the object.
+
+            @Component
+            class Alien {
+
+                private final Computer computer;
+
+                @Autowired
+                public Alien(Computer computer) {
+                    this.computer = computer;
+                }
+            }
+        Think:
+        Spring
+          ↓
+        new Alien(computer)
+
+        The dependency is available from the moment the object is created.
+
+        Why preferred?
+        Good for testing
+        Required dependency cannot be missing
+        Can use final
+        Makes the object immutable after construction
+
+
+PRIMARY AND QUALIFIER:-
+      This topic is basically about one problem:
+      What happens when Spring finds multiple Beans of the same type?
+      Both Laptop and Desktop implement Computer.
+      If Alien asks for:
+              Computer computer;
+      Spring has two possible Beans. It doesn't know which one to inject.
+
+        QUALIFIER:-
+
+              @Qualifier tells Spring exactly which Bean to inject when multiple Beans of the same type exist.
+
+              @Bean
+              public Laptop laptop() {
+                  return new Laptop();
+              }
+
+              @Bean
+              public Desktop desktop() {
+                  return new Desktop();
+              }
+
+             Both are Computer:
+             Laptop  → Computer
+             Desktop → Computer
+
+             @Autowired
+             @Qualifier("laptop")
+             public Alien(Computer computer) {
+                 this.computer = computer;
+             }
+             Spring says:
+             "You specifically asked for laptop, so I'll inject Laptop."
+
+             So:
+             computer.compile();
+             calls:
+             Compiling using Laptop
+
+     PRIMARY:-
+
+             @Primary tells Spring: "If there are multiple Beans, use this one by default."
+
+             @Bean
+             @Primary
+             public Laptop laptop() {
+                 return new Laptop();
+             }
+             @Bean
+             public Desktop desktop() {
+                 return new Desktop();
+             }
+
+             Now if you simply write:
+
+             @Autowired
+             public Alien(Computer computer) {
+                 this.computer = computer;
+             }
+             Spring chooses: Laptop
+             because it is marked @Primary.
+
+NOTE:- If we use primar and Qualifier together than it Qualifier will get priority over Primary so Qualifier will execute first
+
+
+ COMPONENT STEREOTYPE ANNOTATIONS:-
+      Streotype Annotations tell spring wht role a class plays and allo spring to detect/register it as a bean through component scannig
+
+      The important ones are:
+
+              @Component
+              @Service
+              @Repository
+              @Controller
+
+     1) @Component
+      General-purpose Spring-managed component.
+          @Component
+          public class Alien {
+
+              public void code() {
+                  System.out.println("Alien is coding!");
+              }
+          }
+      Spring detects it and registers it as a Bean when component scanning is enabled.
+
+    2)@ComponentScan
+
+      @ComponentScan tells Spring:
+      "Search this package and its sub-packages for Spring components."
+
+      Example:
+
+      @Configuration
+      @ComponentScan("com.telusko")
+      public class AppConfig {
+      }
+
+      it is defined inside the configuration java file
+
