@@ -1,0 +1,7 @@
+Different Layers:-
+    Controller - Controller job is used to work with the request its only job is to accept the request for the client and send data back.
+
+    Service - Its the Layer who is responsible for any kind of processing that is Example :- Add to Numbers , finding factorial , sorting products based on their rating but Unfortunately service dont have data so
+    to do the processing ti needs to connect with the database so for this we have a layer in between which is the DAO (Data Access Object ) layer which is also called
+
+    Repository :- This layer is responsible to intract with the database get the data give it to the service and after performing required processing by the serivice its sent to the Controller and controller give it back to the client .

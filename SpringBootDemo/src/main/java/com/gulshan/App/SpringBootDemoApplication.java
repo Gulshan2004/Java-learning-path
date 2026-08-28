@@ -1,6 +1,8 @@
 package com.gulshan.App;
 
-import org.springframework.boot.ApplicationRunner;
+import com.gulshan.App.model.Alien;
+import com.gulshan.App.model.Laptop;
+import com.gulshan.App.service.LaptopService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -12,8 +14,17 @@ public class SpringBootDemoApplication {
 
 		ApplicationContext context = SpringApplication.run(SpringBootDemoApplication.class, args);
 //        Alien obj = new Alien(); // I dont want to create this object i want spring to create this object
-         Alien obj= context.getBean(Alien.class);
-         obj.code();
+
+		Laptop lap = context.getBean(Laptop.class);
+		LaptopService service= context.getBean(LaptopService.class);
+
+		service.addLaptop(lap);
+
+
+
+//		Alien obj= context.getBean(Alien.class);
+//		System.out.println(obj.getAge());
+//		obj.code();
 
 //         Laptop lap = context.getBean(Laptop.class); //we pass the class of which we want to get the object
 //         lap.compile();
