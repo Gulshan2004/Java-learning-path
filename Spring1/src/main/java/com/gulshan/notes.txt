@@ -13,7 +13,7 @@ Singeleton (Default):- <bean id="alien1" class = "com.gulshan.Alien" scope="sing
 Only ONE object is created. All references point to the same object.
 
 Prototype Scope :- <bean id="alien1" class = "com.gulshan.Alien" scope="prototype" > </bean>
-Every getBean() call creates a new object.
+Every getBean() call creates a new object. also if the scope is set to prototype them the object wil be only created when ypu call getBean() else it wont work
 
 SETTER INJECTION :-
 Spring injects values using setter methods.
