@@ -66,7 +66,7 @@ instead of using setter injection we can use constructor injection as well which
        this.age = age;
        this.lap = lap;
        }
-       then  in the spring.xml we cant inject values in the order
+       then  in the spring.xml we can't inject values in the order
                <constructor-arg name="lap" ref="lap1"> </constructor-arg>
                <constructor-arg name="age" value="21"> </constructor-arg>
             here lap is injected first and then age so there are several ways to avoid it which are by using the type and index (Preferred) attribute this avoids the order based error
