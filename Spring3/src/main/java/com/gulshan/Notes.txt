@@ -1,6 +1,7 @@
 JAVA BASED CONFIG:-
         This is the same idea as XML configuration, but instead of writing bean definitions in spring.xml, we write them in a Java class.
-            @Configuration Tells Spring: "This class contains bean definitions."
+            @Configuration Tells Spring: "This class contains bean definitions."\
+            @Configuration annotation is used to for configuring the class
 
             @Configuration
             public class AppConfig {
@@ -22,15 +23,22 @@ JAVA BASED CONFIG:-
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
 BEAN NAME:-
-         The default name of bean is the desktop itself so in the AppConfig file if the method name is desktop then the dafault name of the bean will be desktop
+         The default name of bean is the method name itself so in the AppConfig file if the method name is desktop then the dafault name of the bean will be desktop
 
          Desktop dt = context.getBean("desktop",Desktop.class);  here the first parameter is the bean name
 
-         for changing the bean name we can specify the name in the @bean annotation like @Bean(name ="bean_name") example :- @Bean(name="com2")
-         so in the App.java file we can pass this name Desktop dt = context.getBean("com2",Desktop.class);
+         for changing the bean name we can specify the name in the @bean annotation like
+          @Bean(name ="bean_name")
+          Example :- @Bean(name="com2")
 
-         also we can pass multiple names to the name @Bean annotation i.e  @Bean(name= {"com2","desktop1","beast"})
-         and among all these names we can use any one name and pass it as a parameter in the App.java i.e  so in the App.java file we can pass this name Desktop dt = context.getBean("beast",Desktop.class);
+         so in the App.java file we can pass this name as :-
+         Desktop dt = context.getBean("com2",Desktop.class);
+
+         also we can pass multiple names to the name @Bean annotation i.e
+         @Bean(name= {"com2","desktop1","beast"})
+
+         and among all these names we can use any one name and pass it as a parameter in the App.java i.e :-
+         Desktop dt = context.getBean("beast",Desktop.class);
 
 
 SCOPE ANNOTATION:-
@@ -48,9 +56,11 @@ SCOPE ANNOTATION:-
          Desktop dt2 = context.getBean("desktopSingleton", Desktop.class);
 
      here both dt1 and dt2 point to the same object.
+     hence calling  the same class through  getBean()  Method n no. of times in the App.java file will create the object only once only so it dosent matter how many times you create the object.
 
      PROTOTYPE:-
-     A new object is created every time the Bean is requested.
+     A new object is created every time the Bean is requested thru the getBean() method in the App.java file.
+
      @Bean
      @Scope("prototype")
      public Desktop desktopPrototype() {
@@ -136,6 +146,7 @@ There are three ways to inject dependencies
 
 
 PRIMARY AND QUALIFIER:-
+
       This topic is basically about one problem:
       What happens when Spring finds multiple Beans of the same type?
       Both Laptop and Desktop implement Computer.
@@ -211,6 +222,8 @@ NOTE:- If we use primar and Qualifier together than it Qualifier will get priori
               @Controller
 
      1) @Component
+
+     @Component  is a stereotype annotation in spring which Helps spring framework to understand that this alien is a class that spring has to manage thr objrcts for it
       General-purpose Spring-managed component.
           @Component
           public class Alien {
@@ -224,12 +237,13 @@ NOTE:- If we use primar and Qualifier together than it Qualifier will get priori
     2)@ComponentScan
 
       @ComponentScan tells Spring:
-      "Search this package and its sub-packages for Spring components."
+      "Search this package and its sub-packages for Spring components. its is used in the configuration file that is AppConfig.java in this case
+      Inside component scan we pass the base package name that is com.gulshan , hence spring searches through this base package and finds all the classes that are annotated with @component and creates object for them
 
       Example:
 
       @Configuration
-      @ComponentScan("com.telusko")
+      @ComponentScan("com.gulshan")
       public class AppConfig {
       }
 

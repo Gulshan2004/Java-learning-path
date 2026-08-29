@@ -12,19 +12,20 @@ import org.springframework.context.annotation.*;
 public class AppConfig {
 //
 //    @Bean
-////    @Qualifier("desktop")
+//    @Qualifier("desktop")
 //    public Alien alien(@Autowired Computer com) { //here writing @Autowired is optional.
 //        Alien obj = new Alien(); //creating the alien object
 //        obj.setAge(25); //setting the value for age
-////        obj.setCom(desktop()) ; //passing the desktop causes tight coupling so we can just pass Computer object as parameter in the alien()
+//        obj.setCom(desktop()) ; //NOTE:- passing the desktop causes tight coupling so we can just pass Computer object as parameter in the alien()
 //        obj.setCom(com) ;
 //        return obj;
 //    }
 //
 //
 //   // @Bean(name= {"com2","desktop1","beast"})
+
 //    @Bean
-////    @Scope("prototype")
+//    @Scope("prototype")
 //    public Desktop desktop(){
 //        return new Desktop();
 //    }

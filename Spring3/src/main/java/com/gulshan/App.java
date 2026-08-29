@@ -16,7 +16,6 @@ public class App
         obj1.code();
 
 //        Desktop dt = context.getBean(Desktop.class);  // Once Spring creates the Bean,  dt refers to the Desktop object managed by Spring.
-//        Desktop dt = context.getBean(Desktop.class);
 //        dt.compile();
 //
 //        Desktop dt1 = context.getBean(Desktop.class);
