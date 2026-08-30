@@ -17,8 +17,8 @@ public class SpringBootDemoApplication {
 
 		Laptop lap = context.getBean(Laptop.class);
 		LaptopService service= context.getBean(LaptopService.class);
+		service.addLaptop(lap);  //this will do the processing part
 
-		service.addLaptop(lap);
 
 
 

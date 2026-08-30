@@ -1,3 +1,13 @@
+@SpringBootApplication
+    Tells Spring Boot:
+    This is the main class of my application. Start the Spring application,
+     configure it automatically, and scan for my Spring components.
+
+    It combines @Configuration, @EnableAutoConfiguration, and @ComponentScan.
+
+SpringApplication.run() :-
+     Actually starts/boots the application and creates the Spring context.
+
 Different Layers:-
     Controller - Controller job is used to work with the request its only job is to accept the request for the client and send data back.
 
@@ -5,3 +15,4 @@ Different Layers:-
     to do the processing ti needs to connect with the database so for this we have a layer in between which is the DAO (Data Access Object ) layer which is also called
 
     Repository :- This layer is responsible to intract with the database get the data give it to the service and after performing required processing by the serivice its sent to the Controller and controller give it back to the client .
+    In the Repositry class we can PERFORM all the CRUD opperations
