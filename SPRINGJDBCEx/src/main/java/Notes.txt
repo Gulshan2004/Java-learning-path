@@ -1,0 +1,33 @@
+ROW MAPPPER:-
+ RowMapper is a functional interface in Spring JDBC used to convert each row of a ResultSet into a Java object.
+ simplifies SELECT operations by mapping database data directly into objects.
+
+ mapRow() method:-
+         takes one row at a time from the result set and give it to the programmer.
+
+         mapRow(ResultSet rs, int rowNum)
+         It is called for every row returned by the query.
+
+         Parameters:
+         ResultSet rs → Contains the database result.
+         int rowNum → Current row number.
+
+         Returns:
+
+         A Java object representing the current database row.
+
+jdbcTemplate.query():-
+
+     For a SELECT query:
+     jdbc.query(sql, mapper);
+
+     It takes:
+     SQL query
+     RowMapper
+
+     and returns a List of mapped objects
+
+The update() method in JdbcTemplate returns the "Number of rows affected" because it indicates how
+many records were successfully updated in the database,
+which is a key aspect of executing update operations. Understanding this return value helps you
+gauge the impact of your database transactions effectively.

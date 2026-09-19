@@ -33,9 +33,7 @@ public class StudentRepo {
     }
 
     public List<Student> findAll() {
-//        List<Student> students =new ArrayList<>();
-//        return students;
-
+ 
         String sql = "select * from student";
 //        RowMapper<Student> mapper = new RowMapper<Student>(){
 //            @Override
@@ -69,7 +67,7 @@ public class StudentRepo {
               });
 
         };
-//        return jdbc.query(sql,mapper);
+//        return jdbc.query(sql,mapper); it will return a list of students
 
     }
 
