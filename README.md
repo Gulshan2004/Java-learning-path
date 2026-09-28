@@ -32,9 +32,9 @@ This repository documents my progress as I prepare for Software Development Engi
 ### 🚀 Phase 2: Backend Development
 - [x] JDBC
 - [x] Hibernate
-- [ ] Spring Core
-- [ ] Spring Boot
-- [ ] Spring JDBC
+- [x] Spring Core
+- [x] Spring Boot
+- [x] Spring JDBC
 - [ ] Web MVC without Spring boot
 - [ ] REST API
 - [ ] JPA
