@@ -1,0 +1,7 @@
+to give the features of a servelet to a class one of the way we can do is
+extending the class with HttpServlet
+to make the server work we use the service() method
+
+whatever data coming from the clent will be stored in the request object
+and whatever data we want to send back to the client will be stored in the response object.
+
