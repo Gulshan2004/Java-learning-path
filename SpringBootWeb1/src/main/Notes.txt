@@ -24,7 +24,7 @@ We can create Multiple Controllers in MVC
          return "result";
      }
 
- #REQUEST PARAM
+ #RequestParam Annotation
   add(int num1, int num2, HttpSession session)
   here we can use the @RequestParam annotataion in which can pass the actual variable coming from the browser and assign its value to another variable called num
    add(@RequestParam(num1) int num, int num2, HttpSession session){
