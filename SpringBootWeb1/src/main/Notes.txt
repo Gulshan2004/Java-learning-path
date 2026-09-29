@@ -1,0 +1,34 @@
+THE PROGRAM IS RUNNING ON localhost 8080
+We can create Multiple Controllers in MVC
+
+
+    public String add(HttpServletRequest req , HttpSession session){ // Here the object is assigned by the spring framework automatically
+//        System.out.println("In add");
+
+        int num1=Integer.parseInt(req.getParameter("num1")); //getParameter() method is used to get the values from the req object
+        int num2=Integer.parseInt(req.getParameter("num2"));
+        int result = num1+num2;
+
+        session.setAttribute("result",result);
+//        System.out.println(result);
+        return "result";
+    }
+
+ INSTEAD OF USING THIS CODE WE CAN USE ANOTHER EASY WAY
+     public String add(int num1, int num2, HttpSession session){
+
+         int result = num1+num2;
+
+         session.setAttribute("result",result);
+
+         return "result";
+     }
+
+ #REQUEST PARAM
+  add(int num1, int num2, HttpSession session)
+  here we can use the @RequestParam annotataion in which can pass the actual variable coming from the browser and assign its value to another variable called num
+   add(@RequestParam(num1) int num, int num2, HttpSession session){
+     int result = num+num2;
+     session.setAttribute("result",result);
+       return "result";
+         }
