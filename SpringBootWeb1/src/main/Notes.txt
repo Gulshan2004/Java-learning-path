@@ -1,8 +1,20 @@
 THE PROGRAM IS RUNNING ON localhost 8080
 We can create Multiple Controllers in MVC
 
+Model-View-Controller (MVC):
+● Model: Represents application data and business logic.
+● View: The presentation layer (e.g., JSP files).
+● Controller: Handles user requests and interacts with the model to return
+responses.
+POJO (Plain Old Java Object): A simple Java class used to encapsulate data.
 
-    public String add(HttpServletRequest req , HttpSession session){ // Here the object is assigned by the spring framework automatically
+the user sends request to the server , this request is handled by controller and it interacts with the model to return responses
+model contains all the application data and business logic, model interacts with the database as well   this data is presented using the view so the order goes like
+CONTROLLER -> MODEL -> VIEW
+
+
+
+    public String add(HttpServletRequest req , HttpSession session){ // Here the object is assigned by the spring framework automatically , session is used to maintain data between pages when a user is trying to acess multiple pages  so we passed a session object here
 //        System.out.println("In add");
 
         int num1=Integer.parseInt(req.getParameter("num1")); //getParameter() method is used to get the values from the req object
@@ -32,3 +44,26 @@ We can create Multiple Controllers in MVC
      session.setAttribute("result",result);
        return "result";
          }
+
+
+MODEL ATTRIBUTE:
+The @ModelAttribute annotation is designed to bind form data from
+an incoming request to a model object in a web application,
+enabling the seamless transfer of user input into your application's
+ data structure. This connection is essential for handling user-submitted
+information effectively, making your selection correct.
+
+
+DISPATCHER SERVLET:
+The DispatcherServlet acts as the central hub for processing
+HTTP requests in a Spring web application,
+routing these requests to the appropriate handlers and ensuring that
+responses are generated and returned to the client. By managing requests centrally,
+it simplifies the request handling process, promoting a clear structure and better
+organization within the application.
+
+The 'web.xml' file is essential for configuring the DispatcherServlet in a Spring MVC
+application as it defines the servlet and its mapping, allowing
+the application to route requests correctly. This is a fundamental aspect
+of understanding how Spring manages web requests, reinforcing your
+grasp of the framework’s architecture.
