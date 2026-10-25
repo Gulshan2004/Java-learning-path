@@ -35,6 +35,7 @@ This repository documents my progress as I prepare for Software Development Engi
 - [x] Spring Core
 - [x] Spring Boot
 - [x] Spring JDBC
+- [x] Spring Boot Web
 - [x] Web MVC without Spring boot
 - [ ] REST API
 - [ ] JPA
