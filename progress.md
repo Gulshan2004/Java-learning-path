@@ -29,7 +29,7 @@
 - [x] Spring Core
 - [x] Spring Boot
 - [x] Spring JDBC
-- [ ] Web MVC without Spring boot 
+- [x] Web MVC without Spring boot 
 - [ ] REST API
 - [ ] JPA
 - [ ] Spring AOP
